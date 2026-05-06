@@ -10,11 +10,15 @@ export interface Lead {
   language: Language;
   status: LeadStatus;
   score: number;
+  last_score_reason?: string;
   source: string;
   assigned_to?: string;
+  notes?: string;
   created_at: string;
   updated_at?: string;
 }
+
+export type ConversationStage = "opening" | "pitch" | "objection" | "qualification" | "close";
 
 export interface Message {
   role: "user" | "assistant" | "system";
@@ -28,8 +32,16 @@ export interface Conversation {
   messages: Message[];
   language: Language;
   summary?: string;
+  current_stage: ConversationStage;
   created_at: string;
   updated_at?: string;
+}
+
+export interface AISummary {
+  intentLevel: "High" | "Medium" | "Low";
+  keyConcern: string;
+  objection: string;
+  recommendation: string;
 }
 
 export interface Interaction {
