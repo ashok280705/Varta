@@ -20,10 +20,14 @@ export async function synthesizeSpeech(text: string, language: string = "english
 
   try {
     const [response] = await client.synthesizeSpeech(request);
-    if (!response.audioContent) {
+    const content = response.audioContent;
+    if (!content) {
       throw new Error("No audio content returned from Google TTS");
     }
-    return response.audioContent;
+    if (typeof content === "string") {
+      return Buffer.from(content, "base64");
+    }
+    return content as Uint8Array;
   } catch (error: any) {
     console.error("Google TTS Error:", error);
     throw new Error(`Google Cloud TTS failed: ${error.message}`);
