@@ -182,7 +182,7 @@ export default function LeadDetailPage({ params }: { params: Promise<{ id: strin
             <p className="text-xs font-bold text-primary uppercase tracking-widest mb-4 flex items-center gap-2">
               <Zap className="h-4 w-4" /> AI Generated Follow-up Preview
             </p>
-            <div className="bg-white/80 rounded-lg p-4 text-sm italic border shadow-inner">
+            <div className="bg-white/90 rounded-lg p-4 text-sm italic border shadow-inner text-slate-900 font-medium selection:bg-primary/30 selection:text-black">
               "{previewMessage}"
             </div>
           </motion.div>

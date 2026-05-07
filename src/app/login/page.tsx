@@ -13,8 +13,8 @@ import { Zap, MessageSquare, Eye, EyeOff } from "lucide-react";
 export default function LoginPage() {
   const router = useRouter();
   const [isSignUp, setIsSignUp] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("202301040066@mitaoe.ac.in");
+  const [password, setPassword] = useState("wtmg2135");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -101,7 +101,7 @@ export default function LoginPage() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="you@company.com"
+                  placeholder="202301040066@mitaoe.ac.in"
                   autoComplete="email"
                 />
               </div>
@@ -115,7 +115,7 @@ export default function LoginPage() {
                     minLength={6}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    placeholder="••••••••"
+                    placeholder="wtmg2135"
                     autoComplete={isSignUp ? "new-password" : "current-password"}
                   />
                   <button
